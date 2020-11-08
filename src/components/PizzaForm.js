@@ -86,6 +86,7 @@ const PizzaForm = props => {
         <FormWrapper>
             <h2>Build Your Own Pizza</h2>
             <FormBox onSubmit={formSubmit}>
+                {serverError ? <p>{serverError}</p> : null}
                 <label htmlFor='name'>Name</label>
                 <input 
                     type='text'
@@ -94,6 +95,7 @@ const PizzaForm = props => {
                     value={formState.name}
                     onChange={inputChange}
                 ></input>
+                {errors.name.length > 2 ? (<ErrorWarning className="error">{errors.name}</ErrorWarning>) : null}
 
                 <label htmlFor='size'>Choice of size</label>
                 <select
@@ -169,4 +171,7 @@ const FormBox = styled.form`
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 1rem;
+`
+const ErrorWarning = styled.p`
+    color: red;
 `
