@@ -4,11 +4,15 @@ import Nav from './Nav'
 import Hero from './Hero'
 
 const Pizza = props => {
+
+    const {addNewPizza, pizzas} = props
+
+
     return (
         <>
             <Nav />
             <Hero />
-            <PizzaForm />
+            <PizzaForm addNewPizza={addNewPizza} />
         </>
     )
 }
