@@ -22,10 +22,13 @@ const App = () => {
 
   return (
     <>
-    <Route exact path="/" component={Home} />
+    <Route exact path="/" render={(props) => (
+      <Home pizzas={pizzas}
+      />
+    )}
+    />
     <Route path="/pizza" render={(props) => (
       <Pizza 
-        pizzas={pizzas}
         addNewpizza={addNewPizza}
       />
         )} />

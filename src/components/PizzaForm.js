@@ -73,7 +73,7 @@ const PizzaForm = props => {
                 setFormState(initialFormState)
 
                 setServerError(null)
-                console.log(response.data)
+                addNewPizza(response.data)
             })
             .catch(err => {
                 setServerError('There is a server error!')
@@ -100,10 +100,10 @@ const PizzaForm = props => {
                     value={formState.size}
                     onChange={inputChange}
                 >
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                    <option>Extra-Large</option>
+                    <option value='Small'>Small</option>
+                    <option value='Medium'>Medium</option>
+                    <option value='Large'>Large</option>
+                    <option value='Extra-Large'>Extra-Large</option>
                 </select>
                 <div>
                     <h4>Toppings</h4>
@@ -146,7 +146,7 @@ const PizzaForm = props => {
                     type='text-area'
                     ></input>
 
-                <button>Add Pizza</button>
+                <button id="submit" type="submit">Add Pizza</button>
             </FormBox>
         </FormWrapper>
     )

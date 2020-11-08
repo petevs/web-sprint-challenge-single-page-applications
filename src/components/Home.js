@@ -4,13 +4,15 @@ import Hero from './Hero'
 
 const Home =  props => {
 
+    const {pizzas} = props;
+
     return (
         <>
             <Nav />
             <Hero />
-            <div>
-                <h1>This is the home component</h1>
-            </div>
+            {pizzas.map(pizza => (
+                <h3>pizza.name</h3>
+            ))}
         </>
     )
 }
