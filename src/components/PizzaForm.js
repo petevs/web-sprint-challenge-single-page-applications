@@ -8,6 +8,7 @@ const PizzaForm = props => {
 
     const { addNewPizza } = props
     const [post, setPost] = useState([])
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     const initialFormState = {
         name: '',
@@ -46,6 +47,7 @@ const PizzaForm = props => {
     useEffect(() => {
         formSchema.isValid(formState).then(valid => {
             console.log("valid?", valid);
+            setIsButtonDisabled(!valid)
         })
     },[formState])
 
@@ -146,7 +148,7 @@ const PizzaForm = props => {
                     type='text-area'
                     ></input>
 
-                <button id="submit" type="submit">Add Pizza</button>
+                <button id="submit" type="submit" disabled={isButtonDisabled}>Add Pizza</button>
             </FormBox>
         </FormWrapper>
     )
