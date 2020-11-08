@@ -1,8 +1,15 @@
 import React from 'react'
+import PizzaForm from './PizzaForm'
+import Nav from './Nav'
+import Hero from './Hero'
 
 const Pizza = props => {
     return (
-        <h1>This is the pizza component</h1>
+        <>
+            <Nav />
+            <Hero />
+            <PizzaForm />
+        </>
     )
 }
 

@@ -1,11 +1,17 @@
 import React from 'react'
+import Nav from './Nav'
+import Hero from './Hero'
 
 const Home =  props => {
 
     return (
-        <div>
-            <h1>This is the home component</h1>
-        </div>
+        <>
+            <Nav />
+            <Hero />
+            <div>
+                <h1>This is the home component</h1>
+            </div>
+        </>
     )
 }
 
