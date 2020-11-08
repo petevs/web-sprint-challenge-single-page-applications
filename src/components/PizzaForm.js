@@ -73,7 +73,7 @@ const PizzaForm = props => {
                 setFormState(initialFormState)
 
                 setServerError(null)
-                addNewPizza(response.data)
+                console.log(response.data)
             })
             .catch(err => {
                 setServerError('There is a server error!')
